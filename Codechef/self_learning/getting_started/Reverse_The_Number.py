@@ -6,4 +6,6 @@ input = sys.stdin.readline
 T = int(input())
 
 for i in range(T):
-    print(((input()[::-1]).lstrip('0')).strip())
+    N = input().rstrip()
+    ans = N[::-1].lstrip("0")
+    print(ans)
