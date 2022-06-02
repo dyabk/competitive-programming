@@ -3,5 +3,5 @@
 import sys
 input = sys.stdin.readline
 
-number = input()
-print(number)
+n = input()
+print(n)

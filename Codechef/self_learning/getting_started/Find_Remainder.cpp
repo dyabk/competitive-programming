@@ -7,13 +7,13 @@ int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    int t;
-    cin >> t;
+    int T;
+    cin >> T;
 
-    for(int i = 0; i < t; ++i) {
-        int a, b;
-        cin >> a >> b;
-        cout << a % b << "\n";
+    for(int i = 0; i < T; ++i) {
+        int A, B;
+        cin >> A >> B;
+        cout << A % B << "\n";
     }
 
 }
