@@ -9,9 +9,5 @@ T = int(input())
 
 for _ in range(T):
     N, A, B, C = map(int, input().split())
-    first = min(A, B)
-    B -= first
-    second = min(B, C)
-    B -= second
-    ans = "YES" if N <= 0 else "NO"
+    ans = "YES" if A + C >= N and B >= N else "NO"
     print(ans)
