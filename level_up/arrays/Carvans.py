@@ -18,5 +18,3 @@ for _ in range(T):
             ans += 1
 
     print(ans)
-
-
