@@ -1,4 +1,4 @@
-# CodeChef - PAWARI - Pawri Meme
+# CodeChef - PAWRI - Pawri Meme
 # https://www.codechef.com/LP1TO201/problems/PAWRI
 
 import sys
