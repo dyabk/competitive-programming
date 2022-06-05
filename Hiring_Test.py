@@ -8,10 +8,17 @@ T = int(input())
 for _ in range(T):
     N, M = map(int, input().split())
     X, Y = map(int, input().split())
+    
+    answers = []
+
     for i in range(N):
-        count = collections.Counter(input().rstrip())
-        if count['F'] >= X or count['F'] >= (X - 1) and count['P'] >= Y:
-            print("1", end="")
+        line = input().rstrip()
+        partial = line.count('P')
+        complete = line.count('F')
+
+        if complete >= X or complete >= (X - 1) and partial >= Y:
+            answers.append("1")
         else:
-            print("0", end="")
-    print("")
+            answers.append("0")
+
+    print("".join(answers))
