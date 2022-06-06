@@ -6,29 +6,24 @@ input = sys.stdin.readline
 
 T = int(input())
 
-digits = set('0123456789')
-lowercase_letters = set('abcdefghijklmnopqrstuvwxyz')
-special_characters = set('@#%&?')
-uppercase_letters = set('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+specials = set('@#%&?')
 
 for _ in range(T):
-    has_digit = False
-    has_lowercase = False
-    has_special = False
-    has_uppercase = False
+    has_digit = has_lowercase = has_special = has_uppercase = False
     is_valid = False
 
     S = input().rstrip()
     if len(S) >= 10:
         for i, c in enumerate(S):
-            if c in lowercase_letters:
+            if c.islower():
                 has_lowercase = True
-            if i != 0 and i != len(S) - 1 and c in uppercase_letters:
-                has_uppercase = True
-            if i != 0 and i != len(S) - 1 and c in digits:
-                has_digit = True
-            if i != 0 and i != len(S) - 1 and c in special_characters:
-                has_special = True
+            if i > 0 and i < len(S) - 1:
+                if c.isupper():
+                    has_uppercase = True
+                if c.isdigit():
+                    has_digit = True
+                if c in specials:
+                    has_special = True
         else:
             if has_digit and has_lowercase and has_special and has_uppercase:
                 is_valid = True
