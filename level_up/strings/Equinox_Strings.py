@@ -27,5 +27,4 @@ for _ in range(T):
         ans = "ANURADHA"
 
     print(ans)
-        
 
