@@ -10,17 +10,26 @@ for _ in range(R):
     L = int(input())
     S = input().rstrip()
 
-    test_letter = 'T'
+    balance = 0
+    is_valid = True
 
-    answer = "Valid"
     for c in S:
-        if c == test_letter:
-            answer = "Invalid"
-            break
-        if c == "H" or c == "T":
-            test_letter = c
+        if c == "H":
+            if balance == 0:
+                balance += 1
+            else:
+                is_valid = False
 
-    if test_letter == 'H':
-        answer = "Invalid"
+        elif c == "T":
+            if balance == 1:
+                balance -= 1
+            else:
+                is_valid = False
 
-    print(answer)
+    if balance != 0:
+        is_valid = False
+
+    if is_valid:
+        print("Valid")
+    else:
+        print("Invalid")
