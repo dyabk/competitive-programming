@@ -5,22 +5,14 @@ from sys import stdin
 input = stdin.readline
 T = int(input())
 
-from heapq import nsmallest
-
 for _ in range(T):
     N, K = map(int, input().split())
     A = list(map(int, input().split()))
 
-    negative_count = 0
-    for elem in A:
-        if elem < 0:
-            negative_count += 1
+    positives = [e for e in A if e > 0]
+    negatives = [-e for e in A if e < 0]
 
-    positivised_portion = sum(nsmallest(min(K, negative_count), A)) * (-1)
-    maxSum = positivised_portion
+    negatives.sort(reverse=True)
 
-    for elem in A:
-        if elem > 0:
-            maxSum += elem
-
-    print(maxSum)
+    answer = sum(positives) + sum(negatives[:K])
+    print(answer)
