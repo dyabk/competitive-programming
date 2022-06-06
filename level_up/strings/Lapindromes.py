@@ -12,7 +12,9 @@ for _ in range(T):
     S = input().rstrip()
 
     middle = len(S) // 2
-    first = middle if len(S) % 2 == 0 else middle + 1
-    A, B = Counter(S[0:middle]), Counter(S[first:len(S)])
-    answer = "YES" if A == B else "NO"
+    if len(S) % 2 != 0:
+        S = S[:middle] + S[middle+1:]
+
+    first_half, second_half = Counter(S[:middle]), Counter(S[middle:])
+    answer = "YES" if first_half == second_half else "NO"
     print(answer)
