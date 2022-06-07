@@ -10,10 +10,10 @@ for _ in range(T):
     K = int(input())
 
     for i in range(len(A) - 1, -1, -1):
-        if K > 0:
-            decrement = min(K, A[i])
-            A[i] -= decrement
-            K -= decrement
+        decrement = min(K, A[i])
+        A[i] -= decrement
+        K -= decrement
+        
         if K == 0 and A[i] != 0:
             print(i + 1)
             break
