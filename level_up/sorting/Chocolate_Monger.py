@@ -2,7 +2,6 @@
 # https://www.codechef.com/LP1TO201/problems/CM164364
 
 from sys import stdin
-from collections import Counter
 
 input = stdin.readline
 T = int(input())
