@@ -1,15 +1,9 @@
 def brute_force(K, arr):
     results = []
 
-    for ind in range(len(arr)):
-        if ind + K <= len(arr):
-            _sum = 0
-            for x in range(ind, ind + K):
-                _sum += arr[x]
-            results.append(_sum / K);
-        else:
-            break
-
+    for i in range(len(arr) - K + 1):
+        average = sum(arr[i:i+K]) / K;
+        results.append(average);
     return results;
 
 def sliding_window(K, arr):
