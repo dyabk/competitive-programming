@@ -1,4 +1,3 @@
-from calendar import c
 from collections import Counter
 
 
@@ -19,7 +18,6 @@ def longest_substring_with_k_distinct(str1, k):
             if unique_characters[str1[start]] == 0:
                 del unique_characters[str1[start]]
             start += 1
-
         answer = max(answer, end - start + 1)
     return answer
 
