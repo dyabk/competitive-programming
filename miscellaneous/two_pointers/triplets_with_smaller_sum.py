@@ -2,10 +2,13 @@ def triplet_with_smaller_sum(arr, target):
     count = 0
     arr.sort()
     for i in range(len(arr) - 2):
-        for j in range(i + 1, len(arr) - 1):
-            for k in range(j + 1, len(arr)):
-                if i != j and j != k and k != i and arr[i] + arr[j] + arr[k] < target:
-                    count += 1
+        j, k = i + 1, len(arr) - 1
+        while j < k:
+            if arr[i] + arr[j] + arr[k] < target:
+                count += k - j
+                j += 1
+            else:
+                k -= 1
     return count
 
 
